@@ -15,6 +15,7 @@ import Products from "./pages/admin/components/Products";
 import Orders from "./pages/admin/components/Orders";
 import NotFound from "./pages/admin/components/NotFound";
 import AddProduct from "./pages/admin/components/AddProduct";
+import ProductInfo from "./components/ProductInfo";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,10 @@ const router = createBrowserRouter([
       {
         path: "category/:category",
         element: <GlobalProducts />,
-      },
+      },{
+        path:"product/:id",
+        element:<ProductInfo/>
+      }
     ],
   },
   {
