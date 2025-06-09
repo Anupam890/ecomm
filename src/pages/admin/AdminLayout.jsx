@@ -52,7 +52,11 @@ const AdminLayout = () => {
             className="p-2 rounded-lg bg-white shadow-sm border hover:bg-gray-50 transition-colors"
             aria-label="Toggle Sidebar"
           >
-            {sidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {sidebarOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </button>
 
           <div className="flex items-center space-x-6">

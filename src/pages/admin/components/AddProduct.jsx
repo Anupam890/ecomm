@@ -6,7 +6,6 @@ const AddProduct = () => {
     description: "",
     category: "",
     price: "",
-    imageUrl: "",
     available: false,
   });
 
@@ -124,36 +123,44 @@ const AddProduct = () => {
           <label className="block mb-1 font-medium" htmlFor="imageUpload">
             Upload Product Image
           </label>
-          <input
-            id="imageUpload"
-            name="imageUpload"
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-            className="block w-full text-sm text-gray-700"
-          />
-          {imagePreview && (
-            <img
-              src={imagePreview}
-              alt="Preview"
-              className="mt-4 w-48 h-48 object-cover rounded-md border"
-            />
-          )}
-        </div>
 
-        <div>
-          <label className="block mb-1 font-medium" htmlFor="imageUrl">
-            Or Enter Image URL
+          <label
+            htmlFor="imageUpload"
+            className="flex flex-col items-center justify-center w-full h-40 px-4 transition bg-white border-2 border-dashed rounded-md cursor-pointer hover:bg-gray-50"
+          >
+            {imagePreview ? (
+              <img
+                src={imagePreview}
+                alt="Product Preview"
+                className="object-contain h-full"
+              />
+            ) : (
+              <div className="flex flex-col items-center justify-center text-gray-500">
+                <svg
+                  className="w-10 h-10 mb-2 text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3 16.5V19a2 2 0 002 2h14a2 2 0 002-2v-2.5M16 12l-4-4m0 0l-4 4m4-4v12"
+                  />
+                </svg>
+                <span className="text-sm">Click or drag to upload</span>
+              </div>
+            )}
+            <input
+              id="imageUpload"
+              name="imageUpload"
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              className="hidden"
+            />
           </label>
-          <input
-            id="imageUrl"
-            name="imageUrl"
-            type="url"
-            value={formData.imageUrl}
-            onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-md"
-            placeholder="Enter image URL"
-          />
         </div>
 
         <div className="flex items-center space-x-2">

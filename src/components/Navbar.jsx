@@ -10,8 +10,12 @@ const Navbar = () => {
       </h2>
 
       <ul className="flex gap-6 text-gray-600 font-medium">
-        <li className="cursor-pointer hover:text-black transition">Mens</li>
-        <li className="cursor-pointer hover:text-black transition">Womens</li>
+        <li className="cursor-pointer hover:text-black transition">
+          <Link to={"category/Mens"}>Mens</Link>
+        </li>
+        <li className="cursor-pointer hover:text-black transition">
+          <Link to={"category/Womens"}>Womens</Link>
+        </li>
       </ul>
 
       <div className="flex items-center gap-4 ">

@@ -1,10 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+// Global Imports
 import Home from "./pages/Home";
 import Register from "./pages/auth/Register";
 import Login from "./pages/auth/Login";
 import Cart from "./components/Cart";
 import HeroComponent from "./components/HeroComponent";
 import { Toaster } from "react-hot-toast";
+import GlobalProducts from "./pages/user/GlobalProducts";
 //  Admin Components
 import AdminLayout from "./pages/admin/AdminLayout";
 import Dashboard from "./pages/admin/components/Dashboard";
@@ -23,6 +25,10 @@ const router = createBrowserRouter([
       { path: "register", element: <Register /> },
       { path: "login", element: <Login /> },
       { path: "cart", element: <Cart /> },
+      {
+        path: "category/:category",
+        element: <GlobalProducts />,
+      },
     ],
   },
   {
